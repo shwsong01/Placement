@@ -1,0 +1,23 @@
+1. 删除文档中的冒号：
+sed 's/://g/' test.log
+
+2. 删除某一列：
+awk '{$n=""; print$0}' filename
+
+3. 删除搜索出来的行：
+grep -v DBGY test.c > newtest.c
+
+4. 删除包含"abc"的行:
+sed -e '/abc/d' a.txt
+
+5. 删除M到N行:
+sed -i 'M,Nd' filename
+
+6. 删除以某标记开始，某标记截止的多行内容：
+sed '/<tag_begin>/,/<tag_end>/d' filemame
+
+7. 删除空行：
+sed /^[[:space:]]*$/d filemame
+
+8. 提取第一列的值：
+cat file | awk '{print $}
